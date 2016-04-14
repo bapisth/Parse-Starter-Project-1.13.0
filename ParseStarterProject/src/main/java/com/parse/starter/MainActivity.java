@@ -12,11 +12,15 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +32,7 @@ import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnKeyListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private Button signUpOrLoginButton;
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView loginOrSignup;
     private boolean signUpModeActive = true;
     boolean success = false;
+    private RelativeLayout relativeLayout;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -64,8 +69,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       password = (EditText) findViewById(R.id.password);
       loginOrSignup = (TextView) findViewById(R.id.loginOrSignup);
 
+      relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
+      relativeLayout.setOnClickListener(this);
+
       loginOrSignup.setOnClickListener(this);
       signUpOrLoginButton.setOnClickListener(this);
+
+      userName.setOnKeyListener(this);
+      password.setOnKeyListener(this);
 
       if (ParseUser.getCurrentUser() != null){
           Toast.makeText(MainActivity.this, "Current user : "+ ParseUser.getCurrentUser().getUsername().toString(), Toast.LENGTH_SHORT).show();
@@ -114,6 +125,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }else{
                 doLogin();
             }
+        }else if (v.getId() == R.id.relativeLayout){
+            Toast.makeText(getApplicationContext(), "Layout upare click hela", Toast.LENGTH_SHORT).show();
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
         }
     }
 
@@ -163,5 +178,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });*/
 
         return success;
+    }
+
+    @Override
+    public boolean onKey(View view, int i, KeyEvent keyEvent) {
+        if (view.getId() == R.id.password){
+        if (i==KeyEvent.KEYCODE_ENTER && view != null && keyEvent.getAction() == KeyEvent.ACTION_DOWN){
+            if (signUpModeActive)
+                doSignUp();
+            else doLogin();
+        }}else if (view.getId() == R.id.userName){
+            if (i== KeyEvent.KEYCODE_ENTER && view != null && keyEvent.getAction() == KeyEvent.ACTION_DOWN){
+                view.clearFocus();
+                view.requestFocus();
+                return  true;
+            }
+
+        }
+
+
+
+
+        return false;
     }
 }

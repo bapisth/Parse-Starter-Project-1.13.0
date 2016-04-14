@@ -15,7 +15,7 @@
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 tools:context=".MainActivity"
-    android:id="@+id/relativelayout"
+    android:id="@+id/relativeLayout"
     android:background="#ffffff">
 
     <ImageView
@@ -33,6 +33,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:nextFocusDown="@+id/password"
+            android:nextFocusLeft="@+id/password"
+            android:nextFocusForward="@+id/password"
             android:hint="userName"
             android:id="@+id/userName"/>
     </android.support.design.widget.TextInputLayout>
@@ -42,7 +45,8 @@
         android:id="@+id/til2"
         android:layout_alignRight="@+id/til1"
         android:layout_alignEnd="@+id/til1"
-        android:layout_below="@+id/til1">
+        android:layout_below="@+id/til1"
+        android:nextFocusDown="@+id/signUpOrLoginButton">
         <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

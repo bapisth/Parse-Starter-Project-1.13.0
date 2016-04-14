@@ -2069,12 +2069,12 @@ containing a value of this type.
         public static final int normal=0x7f0c000b;
         public static final int parallax=0x7f0c0018;
         public static final int parentPanel=0x7f0c0044;
-        public static final int password=0x7f0c006b;
+        public static final int password=0x7f0c0069;
         public static final int pin=0x7f0c0019;
         public static final int progress_circular=0x7f0c0005;
         public static final int progress_horizontal=0x7f0c0006;
         public static final int radio=0x7f0c0051;
-        public static final int relativelayout=0x7f0c0066;
+        public static final int relativeLayout=0x7f0c0066;
         public static final int right=0x7f0c0025;
         public static final int screen=0x7f0c0036;
         public static final int scroll=0x7f0c0017;
@@ -2110,7 +2110,7 @@ containing a value of this type.
         public static final int text2=0x7f0c0078;
         public static final int textSpacerNoButtons=0x7f0c004a;
         public static final int til1=0x7f0c0068;
-        public static final int til2=0x7f0c006a;
+        public static final int til2=0x7f0c006b;
         public static final int time=0x7f0c0076;
         public static final int title=0x7f0c0043;
         public static final int title_template=0x7f0c0046;
@@ -2118,7 +2118,7 @@ containing a value of this type.
         public static final int topPanel=0x7f0c0045;
         public static final int up=0x7f0c0008;
         public static final int useLogo=0x7f0c0013;
-        public static final int userName=0x7f0c0069;
+        public static final int userName=0x7f0c006a;
         public static final int view_offset_helper=0x7f0c0009;
         public static final int withText=0x7f0c002f;
         public static final int wrap_content=0x7f0c0034;

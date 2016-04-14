@@ -576,12 +576,12 @@ int id none 0x7f0c000f
 int id normal 0x7f0c000b
 int id parallax 0x7f0c0018
 int id parentPanel 0x7f0c0044
-int id password 0x7f0c006b
+int id password 0x7f0c0069
 int id pin 0x7f0c0019
 int id progress_circular 0x7f0c0005
 int id progress_horizontal 0x7f0c0006
 int id radio 0x7f0c0051
-int id relativelayout 0x7f0c0066
+int id relativeLayout 0x7f0c0066
 int id right 0x7f0c0025
 int id screen 0x7f0c0036
 int id scroll 0x7f0c0017
@@ -617,7 +617,7 @@ int id text 0x7f0c007a
 int id text2 0x7f0c0078
 int id textSpacerNoButtons 0x7f0c004a
 int id til1 0x7f0c0068
-int id til2 0x7f0c006a
+int id til2 0x7f0c006b
 int id time 0x7f0c0076
 int id title 0x7f0c0043
 int id title_template 0x7f0c0046
@@ -625,7 +625,7 @@ int id top 0x7f0c0027
 int id topPanel 0x7f0c0045
 int id up 0x7f0c0008
 int id useLogo 0x7f0c0013
-int id userName 0x7f0c0069
+int id userName 0x7f0c006a
 int id view_offset_helper 0x7f0c0009
 int id withText 0x7f0c002f
 int id wrap_content 0x7f0c0034
